@@ -6,3 +6,7 @@ It is a project that I just started, it is a project of home automation (garage 
 It also has sensors that allow you to open the garage as soon as you approach it.
 
 it's just a begin of this project, i will improve my version and add new features
+
+
+ 
+ 

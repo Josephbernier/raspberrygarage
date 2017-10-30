@@ -4,10 +4,10 @@ import time
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-Servo = 18
+Servo = 26
 Echo = 13
 Trig = 22
-Led = 17
+Led = 4
 #Affectation
 GPIO.setup(Led,GPIO.OUT)
 GPIO.setup(Trig,GPIO.OUT)
@@ -24,7 +24,7 @@ pwm.start(2.5)
 pwml.start(0)
 #Starting System
 os.system('date')
-Dm=input("Choisissez la  distance de seuil : ")
+Dm=input("Choose the threshold distance : ")
 print "Starting System..."
 try :
          while 1:
