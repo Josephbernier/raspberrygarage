@@ -1,4 +1,6 @@
 #!usr/bin/python
+#Project by Salim Khazem 
+
 import os
 import time
 import RPi.GPIO as GPIO
@@ -28,26 +30,26 @@ Dm=input("Choose the threshold distance : ")
 print "Starting System..."
 try :
          while 1:
-                GPIO.output(Trig,GPIO.HIGH)
+                GPIO.output(Trig,GPIO.HIGH) #Ultrasonic trig 
                 time.sleep(0.00001)
                 GPIO.output(Trig,GPIO.LOW)
 
-                while GPIO.input(Echo) == 0 :
+                while GPIO.input(Echo) == 0 : #no data received 
                              pass
                 Start= time.time()
 
-                while GPIO.input(Echo) == 1 :
+                while GPIO.input(Echo) == 1 : #Data received 
               				 pass
                 Stop= time.time()
 
-                Distance = (Stop - Start) * 17110
+                Distance = (Stop - Start) * 17110 # calculate the distance of the obstacle 
                 os.system('date')
                 print " The distance is : " , Distance , "cm"
 
                 if Distance < Dm :
                                 DC=1./18. * (180) +2.5
                                 pwm.ChangeDutyCycle(DC)
-								pwml.ChangeDutyCycle(20)
+				pwml.ChangeDutyCycle(20)
                                 if Distance < Dm-5:
                                          for i in range(21,100,5):
                                                         #DC = 1./18. * (179) + $
